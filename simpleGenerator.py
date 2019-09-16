@@ -10,7 +10,9 @@ class Croupier():
             'U': [0.1,0.9] # to F, to U
         }
         
-        self.currentState = np.random.choice(self.states) # Здесь задать начальные вероятности
+        self.startProbability = [2/3,1/3]
+
+        self.currentState = np.random.choice(self.states, p =self.startProbability)
         self.diceValues = [1,2,3,4,5,6]
         self.diceValueProbability = {
             'F': [1/6 for i in range(6)],
